@@ -47,6 +47,10 @@ TODO: there is a script and some other ways to deal with this look into it and a
 byond is 32 bit you need the 32 bit mango hud to have it work<br />
 if you have it installed make sure dxvk is enabled some older installers disable it for byond
 
+## Bad FPS on Nividia cards
+enabling dxvk has helped alot with fixing fps issues on team green cards but others have reported it breaking Byond completely so try it and see which one are you!<br />
+this has also been noted to sometimes cause flickering in tguis
+
 ## If you dont see your issue here please open a issue on this repo 
 I and others really dont mind helping people getting this setup
 
