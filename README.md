@@ -51,6 +51,16 @@ if you have it installed make sure dxvk is enabled some older installers disable
 enabling dxvk has helped alot with fixing fps issues on team green cards but others have reported it breaking Byond completely so try it and see which one are you!<br />
 this has also been noted to sometimes cause flickering in tguis
 
+## Nothing is rendering!!
+not sure the cause of this but the easiest try disabling esync and fsync; exiting full-screen also seems to help sometimes. <br />
+If those did not fix it or if you want a more stable solution [ntsync](https://docs.kernel.org/next/userspace-api/ntsync.html) has been found to a fix it as well. <br />
+If your kernel is newer then 6.15 it is as simple as `# modprobe ntsync` and having a ntsync patched wine (the lutris script has this by default.) this will only enable it until you restart your computer but all distros have solutions for permanent module loading <br />
+<br />
+Here is some instructions for working with modules:<br />
+[Arch](https://wiki.archlinux.org/title/Kernel_module)<br />
+[Fedora](https://docs.fedoraproject.org/en-US/fedora/f40/system-administrators-guide/kernel-module-driver-configuration/Working_with_Kernel_Modules/)<br />
+TODO: add more for more distros
+
 ## If you dont see your issue here please open a issue on this repo 
 I and others really dont mind helping people getting this setup
 
