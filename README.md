@@ -83,15 +83,16 @@ TODO: add more for more distros
 Webview 2 under Wine suffers from some sort of bug that causes it to max out on ram usage no matter what. This is exacerbated by wow64 where the previous 32-bit webview would take 4.5 gb the new 64-bit now takes around 9.5 (tested on tgmc)
 Ill post a bug report on wine but for now we only have work arounds. <br />
 There is two "solutions." <br />
-1. (Recommended) Just add more swap. A swap file uses your hard-drive as ram as webview is being buggy this wont even slow you down as most of the bloated ram wont even be used. If you have 16 Gibs, 20 Gibs of swap is suggested and plenty (increase the swap as needed or as you want more browser tabs open while you are playing)<br />
-
-Here are some guides for setting up/increasing swap.<br />
+1. (Recommended) Just add more swap. A swap file uses your hard-drive as ram as webview is being buggy this wont even slow you down as most of the bloated ram wont even be used. If you have 16 Gibs, 20 Gibs of swap is suggested and plenty (increase the swap as needed or as you want more browser tabs open while you are playing)
+- Here are some guides for setting up/increasing swap.<br />
 [Arch](https://wiki.archlinux.org/title/Swap)<br />
 [Fedora](https://discuss.techlore.tech/t/how-to-increase-swap-size-in-fedora-linux/5802/2)<br />
 [Mint](https://forums.linuxmint.com/viewtopic.php?t=284301)<br />
 <br />
+
 2. if you dont care about spaceman dm breaking or using deprecated features using a 32-bit prefix will cut that 9.5 gib ram footprint in half! This may still not be enough but it is a nice savings.<br />
 scroll up to 'Installing a 32-bit prefix with lutris' and follow that.<br />
+
 TODO: add manuel install instructions for 32-bit<br />
 TODO: make winehq bug report<br />
 
