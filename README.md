@@ -38,6 +38,8 @@ download the "artifact" you will need to then unzip it twice first a .zip and th
 click on the gear next to Wine then in runner iptions set Wine Version to Custom. Finally select the wine binary from the package you just downloaded<br />
 in my case it was at `~/Downloads/wine-tkg-staging-ntsync-git-10.13.r0.ga8a6d7b0-327-x86_64.pkg/usr/bin/wine`<br /> 
 You will now be able to Use the 32-bit version of the lutris installer. <br />
+<img width="851" height="506" alt="image" src="https://github.com/user-attachments/assets/da3b819e-f7cd-41d8-8b98-66143aa47e09" /><br />
+(while we wait for it to be approved by lutris staff please press the + at the top of the lutris screen and then use the `32bitbyond.yaml` found in this repo.)
 
 
 
