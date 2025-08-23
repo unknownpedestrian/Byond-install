@@ -5,6 +5,7 @@ This guide is mostly based on the [Lutris](https://lutris.net/games/byond/) inst
 
 # Please do not use the default Proton-Ge wine provided with lutris
 ## (note: the current lutris script should do this for you)
+## (note2: PROTON-GE 12 WORKS for the best exprince install it in lutris using proton-qt-up or something and use the script `x64byondbeta.yaml` to not be forced into 10.8 wine)
 if not please log an issue and attempt the manuel download as described<br />
 webview2 requires patches made to wine in 10.5. Proton is based on 10.0, so until the wine patches are ported to GE or proton gets rebased to 11.0 please use a system wine instead
 <br /> <br />
@@ -61,7 +62,19 @@ after doing either of these you will be able to launch byond again without issue
 <br /><br />
 TODO: there is a script and some other ways to deal with this look into it and add them as the "hard way"
 
-## mangohud does not work!
+## Horrible flickering on the panels!
+this seems to be caused by a bug in the wine window manager that causes wine to not understand how window decorations work.<br />
+
+There is two solutions.<br />
+
+1. Use proton-ge-12 or newer (maybe not 13 it seems a bit buggy) as I was searching for a complex window manager patch solution gabe and his arch angel glorious eggroll backported the fix to the webview2 installer!<br />
+- it just works! Im not sure if its proton's custom vkd3d or what but it works!
+2. the issue is only present if the wine window manager is allowed to mess up eaither force your window manager to use decorations on wine (gnome seems to hate this) or get a window manager who wants too I suggest kwin as it allows you to run it inside of your normal window manager.
+- just install kwin and then add the command prefix `kwin_wayland --xwayland` (warning this is mostly just theoretical as I was unable to recreate the bug with any of the window managers I installed so you should just use ge tbh)
+- kwin also sometimes refuses to apply window decoration controls sometimes (steam deck kwin specifically it seems?) 
+
+
+## Mangohud does not work!
 byond is 32 bit you need the 32 bit mango hud to have it work<br />
 if you have it installed make sure dxvk is enabled some older installers disable it for byond
 
