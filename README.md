@@ -68,7 +68,7 @@ this seems to be caused by a bug in the wine window manager that causes wine to 
 There is two solutions.<br />
 
 1. Use proton-ge-12 or newer (maybe not 13 it seems a bit buggy) as I was searching for a complex window manager patch solution gabe and his arch angel glorious eggroll backported the fix to the webview2 installer!<br />
-- it just works! Im not sure if its proton's custom vkd3d or what but it works!
+- ~~it just works! Im not sure if its proton's custom vkd3d or what but it works!~~ it might work in some cases give it a try!
 2. the issue is only present if the wine window manager is allowed to mess up eaither force your window manager to use decorations on wine (gnome seems to hate this) or get a window manager who wants too I suggest kwin as it allows you to run it inside of your normal window manager.
 - just install kwin and then add the command prefix `kwin_wayland --xwayland` (warning this is mostly just theoretical as I was unable to recreate the bug with any of the window managers I installed so you should just use ge tbh)
 - kwin also sometimes refuses to apply window decoration controls sometimes (steam deck kwin specifically it seems?) 
