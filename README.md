@@ -117,6 +117,9 @@ scroll up to 'Installing a 32-bit prefix with lutris' and follow that.<br />
 TODO: add manuel install instructions for 32-bit<br />
 TODO: make winehq bug report<br />
 
+## I Cant reach the Client/Server/Reconnect menu!
+The button is windows only but you can just press F1 on your keyboard to open it (Works in full screen as well!)
+
 ## If you dont see your issue here please open a issue on this repo 
 I and others really dont mind helping people getting this setup
 
