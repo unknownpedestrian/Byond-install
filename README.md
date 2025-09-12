@@ -45,7 +45,7 @@ You will now be able to Use the 32-bit version of the lutris installer. <br />
 
 
 # Common issues
-## Byond is stuck on the loading screen / random error code
+## Byond is stuck on the loading screen / error code 256
 Please make sure you installed the correct byond 64bit byond needs the x64 installer (the x86 is borked on wow64 wine [I should really make an issue when I have the time])<br />
 <img width="436" height="358" alt="image" src="https://github.com/user-attachments/assets/828b6515-8dea-4061-a345-dd3c38ed2714" /><br />
 if you are using a 32bit prefix you need the x86 install as 32bit prefixes can not run 64 bit programs even when working correctly.
