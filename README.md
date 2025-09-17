@@ -5,8 +5,8 @@ This guide is mostly based on the [Lutris](https://lutris.net/games/byond/) inst
 
 # Please do not use the default Proton-Ge wine provided with lutris
 ## (note: the current lutris script should do this for you)
-## (note2: PROTON-GE 12 WORKS for the best exprince install it in lutris using proton-qt-up or something and use the script `x64byondbeta.yaml` to not be forced into 10.8 wine)
-if not please log an issue and attempt the manuel download as described<br />
+## (Proton-ge latest is broken once more yippie!!! just use vinilla wine)
+Ill do some testing with em wine and such later you can test it youself using the newly fixed x64byondbeta <br />
 webview2 requires patches made to wine in 10.5. Proton is based on 10.0, so until the wine patches are ported to GE or proton gets rebased to 11.0 please use a system wine instead
 <br /> <br />
 <img width="1047" height="651" alt="image" src="https://github.com/user-attachments/assets/61b333a0-f9cf-48f9-b538-d41d1d5b92af" /><br />
