@@ -122,6 +122,15 @@ TODO: make winehq bug report<br />
 ## I Cant reach the Client/Server/Reconnect menu!
 The button is windows only but you can just press F1 on your keyboard to open it (Works in full screen as well!)
 
+## I run byond on a tiling WM (niri/hyperland/sway/ect) but all that appears is a small white window with a blue icon!!!
+This is kinda a bug with wine where the byond pager dosent open by default luckily that small window (pictured here)
+<img width="265" height="132" alt="image" src="https://github.com/user-attachments/assets/b666e741-eb86-494d-bdd1-9e7e5b20821e" />
+is actully a bar icon for opening the pager just click the small blue icon and the pager will open allowing you to play your games
+
+## I run byond on a traditional WM (Plasma/Gnome/Cosmic/ect) but all that apperas is an Icon on the task bar!!!
+is is kinda a bug with wine where the byond pager dosent open by default luckily that small icon lets you open the pager by just pressing it so just press it and you can play!
+
+
 ## If you dont see your issue here please open a issue on this repo 
 I and others really dont mind helping people getting this setup
 
