@@ -101,7 +101,7 @@ Here is some instructions for working with modules:<br />
 TODO: add more for more distros
 
 ## Byond is using a ton of memory!
-# update wines newer then 10.17 ish have mostly sloved this if you use the newest wine it should mostly be fine
+### Update: wines newer then 10.17 ish have mostly sloved this if you use the newest wine it should mostly be fine
 
 Webview 2 under Wine suffers from some sort of bug that causes it to max out on ram usage no matter what. This is exacerbated by wow64 where the previous 32-bit webview would take 4.5 gb the new 64-bit now takes around 9.5 (tested on tgmc)
 Ill post a bug report on wine but for now we only have work arounds. <br />
@@ -123,9 +123,10 @@ TODO: make winehq bug report<br />
 The button is windows only but you can just press F1 on your keyboard to open it (Works in full screen as well!)
 
 ## I run byond on a tiling WM (niri/hyperland/sway/ect) but all that appears is a small white window with a blue icon!!!
-This is kinda a bug with wine where the byond pager dosent open by default luckily that small window (pictured here)
+This is kinda a bug with wine where the byond pager dosent open by default luckily that small window 
+<br />(pictured here)<br />
 <img width="265" height="132" alt="image" src="https://github.com/user-attachments/assets/b666e741-eb86-494d-bdd1-9e7e5b20821e" />
-is actully a bar icon for opening the pager just click the small blue icon and the pager will open allowing you to play your games
+<br />is actully a bar icon for opening the pager just click the small blue icon and the pager will open allowing you to play your games
 
 ## I run byond on a traditional WM (Plasma/Gnome/Cosmic/ect) but all that apperas is an Icon on the task bar!!!
 is is kinda a bug with wine where the byond pager dosent open by default luckily that small icon lets you open the pager by just pressing it so just press it and you can play!
