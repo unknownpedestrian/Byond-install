@@ -101,6 +101,8 @@ Here is some instructions for working with modules:<br />
 TODO: add more for more distros
 
 ## Byond is using a ton of memory!
+# update wines newer then 10.17 ish have mostly sloved this if you use the newest wine it should mostly be fine
+
 Webview 2 under Wine suffers from some sort of bug that causes it to max out on ram usage no matter what. This is exacerbated by wow64 where the previous 32-bit webview would take 4.5 gb the new 64-bit now takes around 9.5 (tested on tgmc)
 Ill post a bug report on wine but for now we only have work arounds. <br />
 There is two "solutions." <br />
@@ -122,5 +124,6 @@ The button is windows only but you can just press F1 on your keyboard to open it
 
 ## If you dont see your issue here please open a issue on this repo 
 I and others really dont mind helping people getting this setup
+
 
 # TODO: guide for setting up default prefix and vscode dev enviroment
