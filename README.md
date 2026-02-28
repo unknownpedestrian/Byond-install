@@ -119,7 +119,9 @@ TODO: add manuel install instructions for 32-bit<br />
 TODO: make winehq bug report<br />
 
 ## I Cant reach the Client/Server/Reconnect menu!
-The button is windows only but you can just press F1 on your keyboard to open it (Works in full screen as well!)
+The button is windows only, for (some) tg and bay forks you can just press F1 on your keyboard to open it (Works in full screen as well!) 
+<br /> 
+For CM you should be able to use .options (may work for other forks? just try it)
 
 ## I run byond on a tiling WM (niri/hyperland/sway/ect) but all that appears is a small white window with a blue icon!!!
 This is kinda a bug with wine where the byond pager dosent open by default luckily that small window 
