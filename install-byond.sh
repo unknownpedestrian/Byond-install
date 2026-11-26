@@ -12,6 +12,7 @@
 #   /usr/local/bin/byond-launcher       (conf-driven launcher script)
 #   /usr/share/applications/byond.desktop
 #   <prefix>/space-handler.sh           (byond:// URL handler, launches via launcher)
+#   <prefix>/space-watchdog.sh         (closes Edge/WebView after BYOND exits)
 #
 # All network sources are overridable variables so you can point them at your
 # own repo after you create it (see CUSTOM REPO VARIABLES below).
@@ -49,6 +50,7 @@ set -Eeuo pipefail
 REPO_BASE="${REPO_BASE:-https://raw.githubusercontent.com/kinggoldcatter/Wine-Byond-help/master}"
 SMOFONT_URL="${SMOFONT_URL:-${REPO_BASE}/extra/fonts/smalle.zip}"
 NTID_URL="${NTID_URL:-${REPO_BASE}/extra/NT-ID.sh}"
+SPACE_WATCHDOG_URL="${SPACE_WATCHDOG_URL:-${REPO_BASE}/extra/space-watchdog.sh}"
 # Glyph-source fonts for the WebView2 font patch (see byond-font-patch.py).
 EGYPT_URL="${EGYPT_URL:-https://raw.githubusercontent.com/google/fonts/main/ofl/notosansegyptianhieroglyphs/NotoSansEgyptianHieroglyphs-Regular.ttf}"
 RUNIC_URL="${RUNIC_URL:-https://raw.githubusercontent.com/google/fonts/main/ofl/notosansrunic/NotoSansRunic-Regular.ttf}"
@@ -140,7 +142,8 @@ while [ $# -gt 0 ]; do
     --renderer-limit)     WEBVIEW2_RENDERER_LIMIT="$2"; shift 2 ;;
     --repo-base)          REPO_BASE="$2"; shift 2
                           SMOFONT_URL="${REPO_BASE}/extra/fonts/smalle.zip"
-                          NTID_URL="${REPO_BASE}/extra/NT-ID.sh" ;;
+                          NTID_URL="${REPO_BASE}/extra/NT-ID.sh"
+                          SPACE_WATCHDOG_URL="${REPO_BASE}/extra/space-watchdog.sh" ;;
     --user)               SYSTEM_INSTALL=0; shift ;;
     --system)             SYSTEM_INSTALL=1; shift ;;
     --yes)                ASSUME_YES=1; shift ;;
@@ -274,6 +277,14 @@ if [ -n "${GAME_ARGS:-}" ]; then read -r -a args <<< "$GAME_ARGS"; fi
 if [ "${1:-}" = "-url" ] && [ -n "${2:-}" ]; then args+=(-url "$2"); fi
 
 cleanup_menu
+watchdog="$WINEPREFIX/space-watchdog.sh"
+if [ -x "$watchdog" ]; then
+  watchdog_log="$WINEPREFIX/space-watchdog.log"
+  setsid env WINE_BIN_OVERRIDE="$WINE_BIN" "$watchdog" --prefix "$WINEPREFIX" \
+    >>"$watchdog_log" 2>&1 </dev/null &
+else
+  echo "byond-launcher: missing executable space watchdog: $watchdog" >&2
+fi
 "$WINE_BIN" "$GAME_EXE" "${args[@]}" &
 game_pid=$!
 trap 'kill -TERM "$game_pid" 2>/dev/null' INT TERM
@@ -354,7 +365,7 @@ bash "$CACHE_DIR/NT-ID.sh" "$PREFIX" || warn "NT-ID step failed"
 # ---------------------------------------------------------------------------
 log "installing WebView2 runtime (this can take a few minutes)"
 download "$WEBVIEW2_URL" "$CACHE_DIR/MicrosoftEdgeWebView2RuntimeInstallerX64.exe"
-wine_run "$CACHE_DIR/MicrosoftEdgeWebView2RuntimeInstallerX64.exe" /silent /install >/dev/null 2>&1 \
+wine_run "$CACHE_DIR/MicrosoftEdgeWebView2RuntimeInstallerX64.exe" /install >/dev/null 2>&1 \
   || warn "WebView2 installer returned non-zero (often harmless)"
 wine_run taskkill /f /im MicrosoftEdgeUpdate.exe >/dev/null 2>&1 || true
 
@@ -410,6 +421,13 @@ fi
 else
   log "--launcher-only: skipping wine/prefix/BYOND setup"
 fi
+
+# ---------------------------------------------------------------------------
+# Install the Space watchdog into the prefix for the launcher.
+# ---------------------------------------------------------------------------
+log "installing Space watchdog"
+download "$SPACE_WATCHDOG_URL" "$CACHE_DIR/space-watchdog.sh"
+install -m 755 "$CACHE_DIR/space-watchdog.sh" "$PREFIX/space-watchdog.sh"
 
 # ---------------------------------------------------------------------------
 # 3b. Glyph patch: merge hieroglyph / emoji / runic / math outlines into the
